@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  aikr:
+    build: .
+    container_name: aws_iam_key_rotation
+    volumes:
+      - .:/app
+      - ~/.aws:/root/.aws
+    command: ['python3', 'aws_iam_key_rotator.py', '--help']
