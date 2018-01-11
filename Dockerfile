@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-MAINTAINER <ce@castlabs.com>
+MAINTAINER <maciej.stromich>
 
 RUN mkdir /app
 WORKDIR /app
