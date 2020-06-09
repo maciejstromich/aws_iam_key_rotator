@@ -4,8 +4,7 @@ AWS_PROFILE ?= 'default'
 USERNAME ?= ''
 
 lint:
-	$(DOCKER_COMPOSE) run $(DC_RUN_FLAGS) aikr flake8 --exclude=.git,__pycache__,.eggs,*.egg,__init__.py, \
-		--max-line-length=120 .
+	$(DOCKER_COMPOSE) run $(DC_RUN_FLAGS) aikr black -t py38 -l 120 .
 
 rotate:
 	$(DOCKER_COMPOSE) run $(DC_RUN_FLAGS) \

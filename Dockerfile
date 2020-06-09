@@ -1,11 +1,14 @@
-FROM alpine:3.12
+FROM ubuntu:20.04
 
-MAINTAINER <maciej.stromich>
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
+ENV DEBIAN_FRONTEND noninteractive
+ENV PYTHONUNBUFFERED 1
 
 RUN mkdir /app
 WORKDIR /app
 
-RUN  apk add --no-cache python3 py3-pip
+RUN  apt-get update && apt-get -y install python3 python3-pip
 
 ADD requirements.txt  /tmp/
 
